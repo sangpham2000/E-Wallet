@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>MyWallet-Home</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Header -->
+            <header class="header">
+                <div class="container">
+                    <div class="header-container">
+                        <div class="header-logo">
+                            <img srcset="./images/logo.png 2x" alt="" />
+                            <a href="#">MyWallet</a>
+                        </div>
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">Product</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">Company</a>
+                            </li>
+                        </ul>
+
+                        <div class="header-auth">
+                            <a href="./pages/login.php" class="header-login">Log In</a>
+                            <a href="./pages/register.php" class="btn btn-outline">Register</a>
+                        </div>
+
+                        <div class="menu-bars">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- End header -->
+
+            <main>
+                <!-- Hero -->
+                <section class="hero">
+                    <div class="container">
+                        <div class="hero-container">
+                            <div class="hero-content">
+                                <div class="shape"></div>
+                                <h1 class="hero-heading">
+                                    Make Paying Easier With <strong>MyWallet</strong>
+                                </h1>
+                                <p class="hero-description">
+                                    Carry your favorite cards on your devices so you can pay
+                                    in-person, in-app or online.
+                                </p>
+                                <a href="./pages/login.php" class="btn btn-rounded getstart">
+                                    Create Your Wallet
+                                    <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                                </a>
+                            </div>
+                            <div class="hero-image">
+                                <img src="./images/hero-image.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Hero -->
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p class="footer-copy">
+                    Copyright ©
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    Soft by Phạm Thanh Sang.
+                </p>
+            </footer>
+            <!-- End Footer -->
+        </div>
+    </body>
+</html>

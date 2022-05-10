@@ -1,0 +1,13 @@
+// sass ./www/sass/index.scss ./www/style.css --watch
+@import './reset';
+@import './variables';
+@import './mixins';
+@import './base';
+
+@import './components/header';
+@import './components/hero';
+@import './components/footer';
+@import './components/balance';
+@import './components/history';
+@import './components/modal';
+@import './components/service';

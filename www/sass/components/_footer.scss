@@ -1,0 +1,13 @@
+.footer {
+    text-align: center;
+    &-link {
+        @include flex(center, space-between);
+        list-style: none;
+        width: 500px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        li {
+            color: $text-color;
+        }
+    }
+}

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300;400;500;600;700&display=swap');
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1;
+    font-family: $font;
+    color: $text-color;
+    font-weight: 400;
+    background-color: $white-color;
+    user-select: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 45px;
+    font-family: $font;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+
+    &-primary {
+        font-weight: 700;
+        background-color: $primary-color;
+        color: $white-color;
+    }
+
+    &-outline {
+        border-radius: 100rem;
+        background-color: transparent;
+        color: $primary-color;
+        border: 2px solid;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $white-color;
+            border: 2px solid $primary-color;
+            transition: all 0.5s ease;
+        }
+    }
+
+    &-rounded {
+        background-color: $primary-color;
+        color: $white-color;
+        border-radius: $border-radius;
+        padding: 18px 60px;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+
+        &-border {
+            padding: 16px 77px;
+            border-radius: $border-radius;
+            background-color: $white-color;
+            border: 2px solid $primary-color;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                background-color: $primary-color;
+                color: $white-color;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 0px 2.5px $white-color, 0px 0px 0px 5px $primary-color,
+                0px 0px 0px 10px white, 0px 0px 0px 10.5px $primary-color;
+            background-color: $white-color;
+            color: $primary-color;
+        }
+    }
+}
+
+.heading {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: calc(50 / 35);
+    color: $heading-color;
+    margin-bottom: 20px;
+    // text-transform: capitalize;
+    &-network {
+        width: 384px;
+        margin: 0 auto;
+    }
+
+    &-customer {
+        width: 478px;
+        margin: 0 auto;
+    }
+}
+
+.text {
+    line-height: calc(30 / 16);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
+
+// Animation
+@keyframes headerNotifyGrow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Growth {
+    from {
+        transform: scale(var(--growth-form));
+    }
+
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0);
+    }
+    80% {
+        transform: scaleY(1.1);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(500px) scale(0.2);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes border {
+    0% {
+        border-radius: 58% 42% 38% 62% / 42% 55% 45% 58%;
+    }
+    50% {
+        border-radius: 31% 69% 59% 41% / 28% 24% 76% 72%;
+    }
+    100% {
+        border-radius: 58% 42% 38% 62% / 42% 55% 45% 58%;
+    }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="../style.css" />
+        <title>MyWallet</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Header -->
+            <header class="header">
+                <div class="container">
+                    <div class="header-container">
+                        <div class="header-logo">
+                            <img srcset="../images/logo.png 2x" alt="" />
+                            <a href="#">MyWallet</a>
+                        </div>
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">Product</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">Company</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#history" class="menu-link">Transaction history</a>
+                            </li>
+                        </ul>
+
+                        <div class="header-user">
+                            <span>Phạm Thanh Sang</span>
+                            <img src="../images/avata.png" alt="" />
+                            <div class="dropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa-solid fa-gear"></i>Setting
+                                </a>
+                                <a class="dropdown-item" href="./confirm_password.html"
+                                    ><i class="fa-solid fa-unlock-keyhole"></i>Reset password</a
+                                >
+                                <a class="dropdown-item" href="./logout.php"
+                                    ><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a
+                                >
+                            </div>
+                        </div>
+
+                        <div class="menu-bars">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <!-- Account balance -->
+                <section class="balance">
+                    <div class="container">
+                        <div class="balance-container">
+                            <div class="balance-item">
+                                <div class="balance-item-icon">
+                                    <i class="fa-solid fa-wallet"></i>
+                                    <span>Total balance</span>
+                                </div>
+                                <div class="balance-item-info">
+                                    <span class="money-info">1,000,000,000 VNĐ</span>
+                                </div>
+                            </div>
+                            <div class="balance-btn">
+                                <button id="deposit" href="#" class="btn btn-rounded">
+                                    Deposit money <i class="fa-solid fa-sack-dollar"></i>
+                                </button>
+                                <button id="send" href="#" class="btn btn-rounded">
+                                    Send money <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Account balance -->
+
+                <!-- Service -->
+                <section class="service">
+                    <div class="container">
+                        <div class="service-container">
+                            <a class="service-item btn btn-rounded" href="#">
+                                <i class="fa-solid fa-mobile"></i>
+                                <span>Buy phone card</span>
+                            </a>
+
+                            <a class="service-item btn btn-rounded" href="#">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <span>Withdraw money</span>
+                            </a>
+
+                            <a class="service-item btn btn-rounded" href="#">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <span>Bill Payment</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Service -->
+
+                <!-- Transaction history -->
+                <section class="history" id="history">
+                    <div class="container">
+                        <div class="history-container">
+                            <div class="history-content">
+                                <h1>Transaction History</h1>
+                            </div>
+                            <div class="history-item">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Transaction history -->
+            </main>
+            <!-- End header -->
+
+            <!-- Modal popup -->
+            <div id="modal" class="modal">
+                <div class="modal-overlay"></div>
+
+                <div class="modal-body">
+                    <form action="my_wallet.html" class="modal-form" id="form-send">
+                        <h2>Send Money</h2>
+                        <div class="modal-content">
+                            <div class="modal-info">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <span>Sender Information</span>
+                                <div class="modal-input">
+                                    <input type="text" />
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                            </div>
+
+                            <div class="modal-info">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <span>Beneficiary Information</span>
+                                <div class="modal-input">
+                                    <input type="text" />
+                                    <i class="fa-solid fa-user-group"></i>
+                                </div>
+                            </div>
+
+                            <div class="modal-info">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <span>Amount Of Money</span>
+                                <div class="modal-input">
+                                    <input type="number" placeholder="" />
+                                    <span>VND</span>
+                                </div>
+                            </div>
+
+                            <div class="modal-info">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Message</span>
+                                <div class="modal-message">
+                                    <textarea rows="4" cols="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-btn">
+                            <button type="button" id="cancelSend" class="btn btn-rounded-border">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-rounded">Confirm</button>
+                        </div>
+                    </form>
+
+                    <form action="my_wallet.html" class="modal-form" id="form-deposit">
+                        <h2>Deposit Money</h2>
+                        <div class="modal-content">
+                            <div class="modal-info">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <span>Sender Information</span>
+                                <div class="modal-input">
+                                    <input type="text" />
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                            </div>
+
+                            <div class="modal-info">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <span>Amount Of Money</span>
+                                <div class="modal-input">
+                                    <input type="number" placeholder="" />
+                                    <span>VND</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-btn">
+                            <button type="button" id="cancelDeposit" class="btn btn-rounded-border">
+                                Cancel
+                            </button>
+                            <button type="submit" class="btn btn-rounded">Confirm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End modal popup-->
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p class="footer-copy">
+                    Copyright ©
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    Soft by Phạm Thanh Sang.
+                </p>
+            </footer>
+            <!-- End Footer -->
+        </div>
+
+        <script src="../main.js"></script>
+    </body>
+</html>
