@@ -1,0 +1,43 @@
+.service {
+    margin-bottom: 50px;
+    &-container {
+        border-radius: $border-radius;
+        padding: 20px 40px;
+        box-shadow: 0 42px 114px 0 rgba(13, 16, 37, 0.094);
+        background-color: rgba($color: $second-color, $alpha: 0.3);
+        @include flex(center, space-between);
+    }
+
+    &-item {
+        width: 250px;
+        height: 150px;
+        color: $white-color;
+        padding: 10px;
+        font-size: 1.3rem;
+        @include flex(center, center);
+        flex-direction: column;
+
+        &-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            background-color: $white-color;
+            color: $primary-color;
+            padding: 10px 0;
+        }
+
+        @include mobile {
+            width: 80px;
+            height: 80px;
+            font-size: 0.7rem;
+
+            &-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@
 session_start();
 require_once("../admin/account_db.php");
 if (isset($_SESSION['user'])) {
-    header('Location: my_wallet.html');
+    header('Location: my_wallet.php');
     exit();
 }
 $error = '';
@@ -17,13 +17,20 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $dataUser = getAccount($username);
     if (gettype($result) == "boolean") {
         if ($dataUser["first_login"] == 1) {
-            $_SESSION['user'] = $user;
+            $_SESSION['user'] = $username;
             header("Location: reset_password.php");
         } else {
-            $_SESSION['user'] = $username;
-            $_SESSION['name'] = $dataUser["fullname"];
-            header("Location: my_wallet.html");
-            exit();
+            if ($dataUser['status'] == 'pending verification') {
+                $_SESSION['user'] = $username;
+                $_SESSION['name'] = $dataUser["fullname"];
+                header("Location: wait_active.php");
+                exit();
+            } else {
+                $_SESSION['user'] = $username;
+                $_SESSION['name'] = $dataUser["fullname"];
+                header("Location: my_wallet.php");
+                exit();
+            }
         }
     } else {
         $error =  $result;
@@ -70,7 +77,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                                             Forgot Password?
                                         </a>
                                     </div>
-                                    <input id="password" type="password" class="form-control" name="password" required  value="<?= $password ?>"/>
+                                    <input id="password" type="password" class="form-control" name="password" required value="<?= $password ?>" />
                                     <div class="invalid-feedback">Password is required</div>
                                 </div>
                                 <?php

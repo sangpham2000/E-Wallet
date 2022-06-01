@@ -3,11 +3,16 @@
 @import './variables';
 @import './mixins';
 @import './base';
+@import './toast';
 
-@import './components/header';
-@import './components/hero';
-@import './components/footer';
-@import './components/balance';
-@import './components/history';
-@import './components/modal';
-@import './components/service';
+@import './page/header';
+@import './page/hero';
+@import './page/footer';
+@import './page/balance';
+@import './page/history';
+@import './page/modal';
+@import './page/service';
+@import './page/invoice';
+
+
+@import './dashboard/dashboard'

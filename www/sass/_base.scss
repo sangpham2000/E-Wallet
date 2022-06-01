@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .wrapper {
     max-width: 1440px;
@@ -19,9 +19,13 @@ body {
     line-height: 1;
     font-family: $font;
     color: $text-color;
-    font-weight: 400;
+    font-weight: 500;
     background-color: $white-color;
     user-select: none;
+
+    @include mobile {
+        font-size: 0.8rem;
+    }
 }
 
 .btn {
@@ -58,12 +62,17 @@ body {
         background-color: $primary-color;
         color: $white-color;
         border-radius: $border-radius;
-        padding: 18px 60px;
+        padding: 18px;
+        width: 200px;
         position: relative;
         transition: all 0.5s ease-in-out;
+        @include mobile {
+            width: 100%;
+        }
 
         &-border {
-            padding: 16px 77px;
+            padding: 18px;
+            width: 200px;
             border-radius: $border-radius;
             background-color: $white-color;
             border: 2px solid $primary-color;
@@ -90,7 +99,6 @@ body {
     line-height: calc(50 / 35);
     color: $heading-color;
     margin-bottom: 20px;
-    // text-transform: capitalize;
     &-network {
         width: 384px;
         margin: 0 auto;

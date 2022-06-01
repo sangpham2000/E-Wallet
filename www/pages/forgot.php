@@ -1,3 +1,23 @@
+<?php
+require_once("../admin/account_db.php");
+require_once("../admin/wallet_db.php");
+session_start();
+
+$error = '';
+$email = '';
+if (isset($_POST['email'])) {
+    $email = $_POST['email'];
+    $dataUser = getAccountByEmail($email);
+    if (gettype($dataUser)  == "boolean") {
+        $error = "Email does not exist";
+    } else {
+        $_SESSION['email'] = $dataUser['email'];
+        header("Location: reset.php");
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +52,19 @@
                                     <div class="invalid-feedback">Email is invalid</div>
                                 </div>
 
+                                <?php
+                                if (!empty($error)) {
+                                ?>
+                                    <div class="alert alert-danger text-center">
+                                        <strong>Fail!</strong> <?= $error ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+
                                 <div class="d-flex align-items-center">
                                     <button type="submit" class="btn ms-auto text-white" style="background-color: #7162ad">
-                                        Send Link
+                                        Send OTP code
                                     </button>
                                 </div>
                             </form>
@@ -68,6 +98,17 @@
         </div>
     </footer>
     <!-- END FOOTER -->
+
+    <script>
+        function showErrorToast() {
+            toast({
+                title: 'Fail!',
+                message: '<?= $error ?>',
+                type: 'error',
+                duration: 5000
+            });
+        }
+    </script>
 
     <script src="../main.js"></script>
 </body>

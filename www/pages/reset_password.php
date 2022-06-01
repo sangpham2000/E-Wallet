@@ -1,6 +1,10 @@
 <?php
 session_start();
 require_once("../admin/account_db.php");
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+}
 
 $error = '';
 $password = '';
