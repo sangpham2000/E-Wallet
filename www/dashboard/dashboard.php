@@ -27,6 +27,7 @@ $transactions = array_reverse(getAllTransactions());
 
     <!-- <link rel="stylesheet" href="./css/dashboard.css" /> -->
     <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../images/icon-logo.png">
 
     <title>Dashboard</title>
 </head>

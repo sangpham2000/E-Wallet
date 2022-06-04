@@ -190,6 +190,7 @@ if (isset($_POST['sender-withdraw']) && isset($_POST['card-number-withdraw']) &&
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="../images/icon-logo.png">
     <link rel="stylesheet" href="../style.css" />
     <title>MyWallet</title>
 </head>
@@ -234,7 +235,7 @@ if (isset($_POST['sender-withdraw']) && isset($_POST['card-number-withdraw']) &&
                             <a class="dropdown-item" href="#">
                                 <i class="fa-solid fa-gear"></i>Setting
                             </a>
-                            <a class="dropdown-item" href="./confirm_password.php"><i class="fa-solid fa-unlock-keyhole"></i>Reset password</a>
+                            <a class="dropdown-item" href="./confirm_password.php?user=<?= $data_user["username"] ?>"><i class="fa-solid fa-unlock-keyhole"></i>Reset password</a>
                             <a class="dropdown-item" href="./logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
                         </div>
                     </div>

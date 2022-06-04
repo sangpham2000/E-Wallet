@@ -161,7 +161,7 @@ function sendActivationEmail($email, $username, $password)
         $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
         $mail->SMTPAuth = true; //Enable SMTP authentication
         $mail->Username = 'sangpham1150@gmail.com'; //SMTP username
-        $mail->Password = 'zlokobaqtzljxpcc'; //SMTP password
+        $mail->Password = 'lqjjngvocinlxrwj'; //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
         $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -190,7 +190,7 @@ function sendResetEmail($email, $otp)
         $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
         $mail->SMTPAuth = true; //Enable SMTP authentication
         $mail->Username = 'sangpham1150@gmail.com'; //SMTP username
-        $mail->Password = 'zlokobaqtzljxpcc'; //SMTP password
+        $mail->Password = 'lqjjngvocinlxrwj'; //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
         $mail->Port = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -198,7 +198,7 @@ function sendResetEmail($email, $otp)
         $mail->setFrom('sangpham1150@gmail.com', 'MyWallet');
         $mail->addAddress($email, 'Người nhận'); //Add a recipient
         $mail->isHTML(true); //Set email format to HTML
-        $mail->Subject = 'Reset password with MyWallet'; //
+        $mail->Subject = 'MyWallet OTP code'; //
         $mail->Body = "<p>Your OTP code: <strong>$otp</strong></p>";
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

@@ -1,3 +1,26 @@
+<?php
+session_start();
+require_once("../admin/account_db.php");
+
+if (isset($_GET['user'])) {
+    $data = getAccount($_GET['user']);
+}
+
+$error = '';
+$password = '';
+if (isset($_POST['password'])) {
+    $password = $_POST['password'];
+
+    $hashed = $data['password'];
+    if (!password_verify($password, $hashed)) {
+        $error = 'Wrong password';
+    } else {
+        $_SESSION['email'] = $data['email'];
+        header("Location: reset.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +29,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link rel="icon" type="image/x-icon" href="../images/icon-logo.png">
     <title>MyWallet - Confirm Password</title>
 </head>
 
@@ -31,6 +55,16 @@
                                     <input id="password" type="password" class="form-control" name="password" value="" required autofocus />
                                     <div class="invalid-feedback">Password is required</div>
                                 </div>
+
+                                <?php
+                                if (!empty($error)) {
+                                ?>
+                                    <div class="alert alert-danger text-danger">
+                                        <strong>Error!</strong> <?= $error ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
 
                                 <div class="d-flex align-items-center">
                                     <button type="submit" class="btn ms-auto text-white w-100" style="background-color: #7162ad">

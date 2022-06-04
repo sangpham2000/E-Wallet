@@ -21,7 +21,7 @@ body {
     color: $text-color;
     font-weight: 500;
     background-color: $white-color;
-    user-select: none;
+    // user-select: none;
 
     @include mobile {
         font-size: 0.8rem;

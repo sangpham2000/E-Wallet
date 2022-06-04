@@ -71,7 +71,6 @@ body {
   color: #4f5665;
   font-weight: 500;
   background-color: #fff;
-  user-select: none;
 }
 @media only screen and (max-width: 600px) {
   body {
